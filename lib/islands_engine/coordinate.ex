@@ -3,7 +3,7 @@ defmodule IslandsEngine.Coordinate do
 
   defstruct guessed?: false, in_island: :none
 
-  def start_link(), do: Agent.start_link(fn -> %Coordinate{} end)
+  def start_link, do: Agent.start_link(fn -> %Coordinate{} end)
 
   def guessed?(coordinate),
     do: Agent.get(coordinate, fn state -> state.guessed? end)
